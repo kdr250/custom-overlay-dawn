@@ -7,7 +7,10 @@ file(GLOB_RECURSE WEBGPU_HEADERS "${CMAKE_CURRENT_LIST_DIR}/include/webgpu/*.h")
 file(COPY ${WEBGPU_HEADERS} DESTINATION "${CURRENT_PACKAGES_DIR}/include/webgpu")
 
 if (WIN32)
-    # TODO
+    file(COPY "${CMAKE_CURRENT_LIST_DIR}/bin/webgpu_dawn.dll" DESTINATION "${CURRENT_PACKAGES_DIR}/bin")
+    file(COPY "${CMAKE_CURRENT_LIST_DIR}/bin/webgpu_dawn.dll" DESTINATION "${CURRENT_PACKAGES_DIR}/debug/bin")
+    file(COPY "${CMAKE_CURRENT_LIST_DIR}/lib/webgpu_dawn.lib" DESTINATION "${CURRENT_PACKAGES_DIR}/lib")
+    file(COPY "${CMAKE_CURRENT_LIST_DIR}/lib/webgpu_dawn.lib" DESTINATION "${CURRENT_PACKAGES_DIR}/debug/lib")
 elseif (APPLE)
     file(COPY "${CMAKE_CURRENT_LIST_DIR}/lib/libwebgpu_dawn.dylib" DESTINATION "${CURRENT_PACKAGES_DIR}/lib")
     file(COPY "${CMAKE_CURRENT_LIST_DIR}/lib/libwebgpu_dawn.dylib" DESTINATION "${CURRENT_PACKAGES_DIR}/debug/lib")
