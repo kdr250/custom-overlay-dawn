@@ -1,0 +1,8 @@
+!include/
+include/*
+!include/.gitkeep
+!lib/
+lib/*
+!lib/.gitkeep
+
+.DS_Store
